@@ -1,45 +1,45 @@
 package Task_4;
 
 public class Excercise7 {
-    public static void main(String[] args) {
-        int[] inputArray = {2, 2, 3, 3, 4, 4, 4, 11, 11, 11, 11};
-        
-        System.out.print("Input Array: ");
-        printArray(inputArray);
-        
-        int[] resultArray = removeDuplicatesAndAddZeros(inputArray);
-        
-        System.out.print("Output Array: ");
-        printArray(resultArray);
-    }
+	public static void main(String[] args) {
+		int[] inputArray = { 2, 2, 3, 3, 4, 4, 4, 11, 11, 11, 11 };
 
-    private static int[] removeDuplicatesAndAddZeros(int[] nums) {
-        int n = nums.length;
-        int[] result = new int[n];
+		System.out.print("Input Array: ");
+		printArray(inputArray);
 
-        int j = 0;
+		int[] resultArray = removeDuplicatesAndAddZeros(inputArray);
 
-        for (int i = 0; i < n - 1; i++) {
-            if (nums[i] != nums[i + 1]) {
-                result[j++] = nums[i];
-            } else {
-                nums[i] = 0;
-            }
-        }
+		System.out.print("Output Array: ");
+		printArray(resultArray);
+	}
 
-        result[j++] = nums[n - 1];
+	private static int[] removeDuplicatesAndAddZeros(int[] nums) {
+		int n = nums.length;
+		int[] result = new int[n];
 
-        for (; j < n; j++) {
-            result[j] = 0;
-        }
+		int j = 0;
 
-        return result;
-    }
+		for (int i = 0; i < n - 1; i++) {
+			if (nums[i] != nums[i + 1]) {
+				result[j++] = nums[i];
+			} else {
+				nums[i] = 0;
+			}
+		}
 
-    private static void printArray(int[] arr) {
-        for (int num : arr) {
-            System.out.print(num + " ");
-        }
-        System.out.println();
-    }
+		result[j++] = nums[n - 1];
+
+		for (; j < n; j++) {
+			result[j] = 0;
+		}
+
+		return result;
+	}
+
+	private static void printArray(int[] arr) {
+		for (int num : arr) {
+			System.out.print(num + " ");
+		}
+		System.out.println();
+	}
 }
